@@ -14,11 +14,16 @@ include __DIR__ . "/../navbar.php";
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($lessonList as $lesson) : ?>
+            <?php foreach ($lessonList as $lesson) :
+                $id = $lesson["teacher"];
+                $teacherDetails = $model->teacherDetails($id);
+                $id = $lesson["section"];
+                $sectionName = $model->sectionName($id);
+            ?>
                 <tr>
-                    <td><?= $lesson["section"] ?? "" ?></td>
+                    <td><?= $sectionName[0]["section"] ?? "" ?></td>
                     <td><?= $lesson["lesson"] ?? "" ?></td>
-                    <td><?= $lesson["teacher"] ?? "" ?></td>
+                    <td><?= $teacherDetails[0]["name_surname"] ?? "" ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
