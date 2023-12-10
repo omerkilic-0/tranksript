@@ -11,6 +11,7 @@ if (isset($_POST["submit"])) {
     } else {
         $id = $stunedtNumberInput;
         $studentDetails = $model->studentDetails($id);
+        $noteList = $model->noteList($id);
     }
 }
 

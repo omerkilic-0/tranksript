@@ -139,18 +139,29 @@ class model
         }
     }
 
-    // public function hisseSat($id, $hisseBilgisi)
-    // {
-    //     try {
-    //         $stmt = $this->connect->prepare("UPDATE hisseler SET adet = :value1, islem_durumu = :value2 WHERE id = :id");
-    //         $stmt->bindParam(':id', $id);
-    //         $stmt->bindParam(':value1', $hisseBilgisi['value1']);
-    //         $stmt->bindParam(':value2', $hisseBilgisi['value2']);
-    //         $stmt->execute();
-    //         return true;
-    //     } catch (\PDOException $e) {
-    //         echo "Error: " . $e->getMessage();
-    //         return false;
-    //     }
-    // }
+    public function noteList($id)
+    {
+        try {
+            $stmt = $this->connect->prepare("SELECT * FROM notes WHERE student = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return array();
+        }
+    }
+
+    public function lessonDetails($id)
+    {
+        try {
+            $stmt = $this->connect->prepare("SELECT * FROM lessons WHERE id = :id");
+            $stmt->bindParam(':id', $id);
+            $stmt->execute();
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return array();
+        }
+    }
 }

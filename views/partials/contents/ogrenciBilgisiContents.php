@@ -33,7 +33,7 @@ include __DIR__ . "/../navbar.php";
                     <th scope="col">Ad Soyad</th>
                     <th scope="col">Öğrenci No:</th>
                     <th scope="col">Kayıt Tarihi</th>
-                    <th scope="col">School Mail</th>
+                    <th scope="col">Okul Mail</th>
                 </tr>
             </thead>
             <tbody>
@@ -49,19 +49,20 @@ include __DIR__ . "/../navbar.php";
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Ad Soyad</th>
-                    <th scope="col">Öğrenci No:</th>
-                    <th scope="col">Kayıt Tarihi</th>
-                    <th scope="col">School Mail</th>
+                    <th scope="col">Ders</th>
+                    <th scope="col">Not</th>
                 </tr>
             </thead>
             <tbody>
+                <?php foreach ($noteList as $note) : 
+                    $id = $note["lesson"];
+                    $lessonDetails = $model-> lessonDetails($id);
+                    ?>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?= $lessonDetails[0]["lesson"] ?></td>
+                    <td><?= $note["note"] ?></td>
                 </tr>
+                <?php endforeach; ?>
             </tbody>
         </table>
 
