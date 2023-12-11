@@ -23,9 +23,13 @@ include __DIR__ . "/../navbar.php";
             <h3>KÜTAHYA DUMLUPINAR ÜNİVERSİTESİ</h3>
             <h3>NOT DÖKÜM BELGESİ(transkript)</h3>
         </div>
-        <div>
+        <div style="float: left; text-align: left;">
             <img src="images/Kütahya_Dumlupınar_Üniversitesi_logo.png" alt="DPÜ" width="250px" height="auto">
         </div>
+        <div style="float: right; text-align: right;">
+            <img src="images/türkBayrağı.png" alt="Türkiye" width="275px" height="auto">
+        </div>
+        <br><br><br><br><br>
         <table class="table">
             <thead>
                 <h4 style="text-align: center;">Öğrenci Bilgisi</h4>
@@ -51,17 +55,34 @@ include __DIR__ . "/../navbar.php";
                 <tr>
                     <th scope="col">Ders</th>
                     <th scope="col">Not</th>
+                    <th scope="col">Harf Notu</th>
+                    <th scope="col">AKTS</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($noteList as $note) : 
+                <?php foreach ($noteList as $note) :
                     $id = $note["lesson"];
-                    $lessonDetails = $model-> lessonDetails($id);
-                    ?>
-                <tr>
-                    <td><?= $lessonDetails[0]["lesson"] ?></td>
-                    <td><?= $note["note"] ?></td>
-                </tr>
+                    $lessonDetails = $model->lessonDetails($id);
+                    $puan = $note["note"];
+                    if ($puan >= 90 && $puan <= 100) {
+                        $harfNotu = "A";
+                    } elseif ($puan >= 80 && $puan < 90) {
+                        $harfNotu = "B";
+                    } elseif ($puan >= 70 && $puan < 80) {
+                        $harfNotu = "C";
+                    } elseif ($puan >= 60 && $puan < 70) {
+                        $harfNotu = "D";
+                    } else {
+                        $harfNotu = "F";
+                    }
+                    $akts = rand(1, 5);
+                ?>
+                    <tr>
+                        <td><?= $lessonDetails[0]["lesson"] ?? "" ?></td>
+                        <td><?= $note["note"] ?? "" ?></td>
+                        <td><?= $harfNotu ?? "" ?></td>
+                        <td><?= $akts ?? "" ?></td>
+                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
