@@ -53,6 +53,7 @@ include __DIR__ . "/../navbar.php";
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Ders Kodu</th>
                     <th scope="col">Ders</th>
                     <th scope="col">Not</th>
                     <th scope="col">Harf Notu</th>
@@ -78,6 +79,7 @@ include __DIR__ . "/../navbar.php";
                     $akts = rand(1, 5);
                 ?>
                     <tr>
+                        <td><?= $lessonDetails[0]["id"] ?? "" ?></td>
                         <td><?= $lessonDetails[0]["lesson"] ?? "" ?></td>
                         <td><?= $note["note"] ?? "" ?></td>
                         <td><?= $harfNotu ?? "" ?></td>
