@@ -9,6 +9,11 @@ if (isset($_POST["submit"])) {
     $mailInput = $_POST["mail"];
     $adressInput = $_POST["adress"];
     $sectionInput = $_POST["section"];
+    $lesson1Input = $_POST["lesson1"];
+    $lesson2Input = $_POST["lesson2"];
+    $lesson3Input = $_POST["lesson3"];
+    $lesson4Input = $_POST["lesson4"];
+    $lesson5Input = $_POST["lesson5"];
 
     if (empty($nameInput)) {
         $name_Err = '<div class="alert alert-danger" role="alert">Lütfen ad bölümünü boş bırakmayınız!</div>';
@@ -56,11 +61,41 @@ if (isset($_POST["submit"])) {
         $section = $sectionInput;
     }
 
-    $mailName = strtolower(str_replace(" ", ".", $name));
-    $mailSurname = strtolower(str_replace(" ", ".", $surname));
-    $schoolMail = $mailName . "." . $mailSurname . "@ogr.dpu.edu.tr";
+    if ($lesson1Input == null) {
+        $lesson1_Err = '<div class="alert alert-danger" role="alert">Lütfen geçerli bir ders giriniz!</div>';
+    } else {
+        $lesson1 = $lesson1Input;
+    }
 
-    if (empty($name_Err) & empty($surname_Err) & empty($phone_Err) & empty($mail_Err) & empty($adress_Err) & empty($section_Err)) {
+    if ($lesson2Input == null) {
+        $lesson2_Err = '<div class="alert alert-danger" role="alert">Lütfen geçerli bir ders giriniz!</div>';
+    } else {
+        $lesson2 = $lesson2Input;
+    }
+
+    if ($lesson3Input == null) {
+        $lesson3_Err = '<div class="alert alert-danger" role="alert">Lütfen geçerli bir ders giriniz!</div>';
+    } else {
+        $lesson3 = $lesson3Input;
+    }
+
+    if ($lesson4Input == null) {
+        $lesson4_Err = '<div class="alert alert-danger" role="alert">Lütfen geçerli bir ders giriniz!</div>';
+    } else {
+        $lesson4 = $lesson4Input;
+    }
+
+    if ($lesson5Input == null) {
+        $lesson5_Err = '<div class="alert alert-danger" role="alert">Lütfen geçerli bir ders giriniz!</div>';
+    } else {
+        $lesson5 = $lesson5Input;
+    }
+
+    if (empty($name_Err) & empty($surname_Err) & empty($phone_Err) & empty($mail_Err) & empty($adress_Err) & empty($section_Err) & empty($lesson1_Err) & empty($lesson2_Err) & empty($lesson3_Err) & empty($lesson4_Err) & empty($lesson5_Err)) {
+        $mailName = strtolower(str_replace(" ", ".", $name));
+        $mailSurname = strtolower(str_replace(" ", ".", $surname));
+        $schoolMail = $mailName . "." . $mailSurname . "@ogr.dpu.edu.tr";
+
         $studentIdInfo = $model->studentIdInfo();
         $studentId = $studentIdInfo[0]["id"] + 1;
         $studentInfo = [
@@ -72,6 +107,11 @@ if (isset($_POST["submit"])) {
             "value6" => $adress,
             "value7" => $section,
             "value8" => $schoolMail,
+            "value9" => $lesson1,
+            "value10" => $lesson2,
+            "value11" => $lesson3,
+            "value12" => $lesson4,
+            "value13" => $lesson5,
         ];
         $model->addStudent($studentInfo);
     }

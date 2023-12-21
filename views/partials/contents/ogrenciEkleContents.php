@@ -36,8 +36,6 @@ include __DIR__ . "/../navbar.php";
         </div>
         <?= $adress_Err ?? "" ?>
 
-        <br>
-
         <select name="section" class="form-select" style="margin-bottom:15px;">
             <option value="">Bölüm Seçiniz</option>
             <option value="1">Büro Hizmetleri ve Sekreterlik Bölümü</option>
@@ -55,7 +53,80 @@ include __DIR__ . "/../navbar.php";
         </select>
         <?= $section_Err ?? "" ?>
 
-        <br>
+        <select name="lesson1" class="form-select" style="margin-bottom:15px;">
+            <option value="">Ders Seçiniz</option>
+            <option value="1">Ofis Yönetimi</option>
+            <option value="2">Sekreterlik ve Asistanlık</option>
+            <option value="3">İşletme İletişimi</option>
+            <option value="4">Ofis Yazılımları Kullanımı</option>
+            <option value="5">Toplantı ve Organizasyon Yönetimi</option>
+            <option value="6">Yönetim ve Organizasyon</option>
+            <option value="7">İşletme Yönetimi</option>
+            <option value="8">İnsan Kaynakları Yönetimi</option>
+            <option value="9">Stratejik Yönetim</option>
+            <option value="10">Kurumsal İletişim</option>
+        </select>
+        <?= $lesson1_Err ?? "" ?>
+
+        <select name="lesson2" class="form-select" style="margin-bottom:15px;">
+            <option value="">Ders Seçiniz</option>
+            <option value="1">Ofis Yönetimi</option>
+            <option value="2">Sekreterlik ve Asistanlık</option>
+            <option value="3">İşletme İletişimi</option>
+            <option value="4">Ofis Yazılımları Kullanımı</option>
+            <option value="5">Toplantı ve Organizasyon Yönetimi</option>
+            <option value="6">Yönetim ve Organizasyon</option>
+            <option value="7">İşletme Yönetimi</option>
+            <option value="8">İnsan Kaynakları Yönetimi</option>
+            <option value="9">Stratejik Yönetim</option>
+            <option value="10">Kurumsal İletişim</option>
+        </select>
+        <?= $lesson2_Err ?? "" ?>
+
+        <select name="lesson3" class="form-select" style="margin-bottom:15px;">
+            <option value="">Ders Seçiniz</option>
+            <option value="1">Ofis Yönetimi</option>
+            <option value="2">Sekreterlik ve Asistanlık</option>
+            <option value="3">İşletme İletişimi</option>
+            <option value="4">Ofis Yazılımları Kullanımı</option>
+            <option value="5">Toplantı ve Organizasyon Yönetimi</option>
+            <option value="6">Yönetim ve Organizasyon</option>
+            <option value="7">İşletme Yönetimi</option>
+            <option value="8">İnsan Kaynakları Yönetimi</option>
+            <option value="9">Stratejik Yönetim</option>
+            <option value="10">Kurumsal İletişim</option>
+        </select>
+        <?= $lesson3_Err ?? "" ?>
+
+        <select name="lesson4" class="form-select" style="margin-bottom:15px;">
+            <option value="">Ders Seçiniz</option>
+            <option value="1">Ofis Yönetimi</option>
+            <option value="2">Sekreterlik ve Asistanlık</option>
+            <option value="3">İşletme İletişimi</option>
+            <option value="4">Ofis Yazılımları Kullanımı</option>
+            <option value="5">Toplantı ve Organizasyon Yönetimi</option>
+            <option value="6">Yönetim ve Organizasyon</option>
+            <option value="7">İşletme Yönetimi</option>
+            <option value="8">İnsan Kaynakları Yönetimi</option>
+            <option value="9">Stratejik Yönetim</option>
+            <option value="10">Kurumsal İletişim</option>
+        </select>
+        <?= $lesson4_Err ?? "" ?>
+
+        <select name="lesson5" class="form-select" style="margin-bottom:15px;">
+            <option value="">Ders Seçiniz</option>
+            <option value="1">Ofis Yönetimi</option>
+            <option value="2">Sekreterlik ve Asistanlık</option>
+            <option value="3">İşletme İletişimi</option>
+            <option value="4">Ofis Yazılımları Kullanımı</option>
+            <option value="5">Toplantı ve Organizasyon Yönetimi</option>
+            <option value="6">Yönetim ve Organizasyon</option>
+            <option value="7">İşletme Yönetimi</option>
+            <option value="8">İnsan Kaynakları Yönetimi</option>
+            <option value="9">Stratejik Yönetim</option>
+            <option value="10">Kurumsal İletişim</option>
+        </select>
+        <?= $lesson5_Err ?? "" ?>
 
         <button type="submit" class="btn btn-success" name="submit">Kayıt Et</button>
     </form>

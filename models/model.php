@@ -22,7 +22,7 @@ class model
     public function addStudent($studentInfo)
     {
         try {
-            $stmt = $this->connect->prepare("INSERT INTO students (id, name, surname, phone, mail, address, section, school_mail) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, :value7, :value8)");
+            $stmt = $this->connect->prepare("INSERT INTO students (id, name, surname, phone, mail, address, section, school_mail, lesson1, lesson2, lesson3, lesson4, lesson5) VALUES (:value1, :value2, :value3, :value4, :value5, :value6, :value7, :value8, :value9, :value10, :value11, :value12, :value13)");
             $stmt->bindParam(':value1', $studentInfo['value1']);
             $stmt->bindParam(':value2', $studentInfo['value2']);
             $stmt->bindParam(':value3', $studentInfo['value3']);
@@ -31,6 +31,11 @@ class model
             $stmt->bindParam(':value6', $studentInfo['value6']);
             $stmt->bindParam(':value7', $studentInfo['value7']);
             $stmt->bindParam(':value8', $studentInfo['value8']);
+            $stmt->bindParam(':value9', $studentInfo['value9']);
+            $stmt->bindParam(':value10', $studentInfo['value10']);
+            $stmt->bindParam(':value11', $studentInfo['value11']);
+            $stmt->bindParam(':value12', $studentInfo['value12']);
+            $stmt->bindParam(':value13', $studentInfo['value13']);
             $stmt->execute();
             return true;
         } catch (\PDOException $e) {
