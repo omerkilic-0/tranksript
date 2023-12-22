@@ -9,10 +9,11 @@ include __DIR__ . "/../navbar.php";
         <thead>
             <tr>
                 <th scope="col">No</th>
-                <th scope="col">Ad</th>
-                <th scope="col">Soyad</th>
+                <th scope="col">Ad Soyad</th>
                 <th scope="col">Bölüm</th>
                 <th scope="col">E-Mail</th>
+                <th scope="col">Tel</th>
+                <th scope="col">Ders Sayısı</th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +23,11 @@ include __DIR__ . "/../navbar.php";
             ?>
                 <tr>
                     <td><?= $student["id"] ?? "" ?></td>
-                    <td><?= $student["name"] ?? "" ?></td>
-                    <td><?= $student["surname"] ?? "" ?></td>
+                    <td><?= $student["name"] . " " . $student["surname"] ?? "" ?></td>
                     <td><?= $sectionName[0]["section"] ?? "" ?></td>
                     <td><?= $student["school_mail"] ?? "" ?></td>
+                    <td><?= $student["phone"] ?? "" ?></td>
+                    <td>5</td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
